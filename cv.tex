@@ -1,0 +1,230 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%for code
+\usepackage{minted}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Zuo Tianyou} \\[7.5pt]
+\href{mailto:fztym@sjtu.edu.cn}{\raisebox{-0.05\height}\faEnvelope \ fztym@sjtu.edu.cn} \ $|$ \ 
+\href{tel:+8613162909941}{\raisebox{-0.05\height}\faMobile \ +86.131.6290.9941} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+\textbf{Shanghai Jiao Tong University} & Shanghai, China \\
+\textit{B.S. in Electrical and Computer Engineering, Minor in Computer Science} & Sep. 2023 - Present \\  
+\normalsize (GPA: 3.62/4.0) & (Rank: 51/215)\\
+\end{tabularx}
+
+\section{Work Experience}
+
+\begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{Jan. 2026 - May. 2026}
+Participated in the development of muBLAS, a high-performance GPU math library. 
+Implemented and optimized CUDA kernels for linear algebra routines including LU factorization and batched operations. 
+Analyzed shared memory usage and reduction strategies to improve numerical stability and performance.
+\end{jobshort}
+
+% 工导ta
+% \begin{jobshort}{ENGR1000J Intro. to Engineering(SE) | Teaching Assistant}{May. 2025 - Aug. 2025}
+% Led laboratory sessions covering Git workflows, functional programming, agile development practices, and basic game engine architecture. 
+% Maintained course repositories and provided structured feedback on student code quality and teamwork.
+% \end{jobshort}
+
+\begin{jobshort}{ECE4770J Intro. to Algorithm | Teaching Assistant}{Sep. 2025 - Dec. 2025}
+Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail recursion optimization and continuation-passing style (CPS). 
+Maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
+\end{jobshort}
+
+\begin{jobshort}{ECE2810J Data Structures and Algorithms | Teaching Assistant}{Sep. 2025 - Dec. 2025}
+Delivered recitation sessions covering advanced data structures and complexity analysis. 
+Designed supplementary problem sets inspired by competitive programming and maintained the course OJ system.
+\end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%	Courses
+%----------------------------------------------------------------------------------------
+
+\section{Courses}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+ECE4770J & Introduction to Algorithms \hfill \normalsize (4.0/4.0)\\
+ECE2810J & Data Structures and Algorithms  \hfill \normalsize (4.0/4.0)\\
+MATH1860J & Honors Mathematics II \hfill \normalsize (4.0/4.0)\\
+ECE4821J & Introduction to Operating Systems \hfill \normalsize (4.0/4.0)\\
+ENGR1510J & Accelerated Introduction to Computers and Programming \hfill \normalsize (4.0/4.0)\\
+ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
+% ECE3480J & Introduction to Quantum Information Science \hfill \normalsize (4.0/4.0) \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%   Projects
+%----------------------------------------------------------------------------------------
+
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{muBLAS} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's version of cuBLAS. I implemented several apis like \mintinline{cpp}{getrfBatched}, \mintinline{cpp}{getrsBatched}, \mintinline{cpp}{getriBatched}, \mintinline{cpp}{matinvBatched}.}  \\
+
+\textbf{LemonDB - Multi-Threaded In-Memory Database} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Implemented a thread pool and task scheduling mechanism to support concurrent query execution. Designed synchronization strategies to ensure thread safety and reduce contention.}  \\
+
+\textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Built a Unix-like shell in C supporting redirection, pipes, background jobs, and signal handling. Implemented process control using fork, exec, and waitpid.}  \\
+
+\textbf{MSD Distributed Recommendation System} & \hfill \href{https://github.com/zty2004/ECE4721J}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Implemented machine learning models including Linear Regression and XGBoost for prediction tasks. Applied PCA for dimensionality reduction and deployed distributed computation using Spark.}  \\
+
+% 工导游戏
+% \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{Game Link} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Designed and implemented core game logic and state management with modular architecture and maintainable code structure.}  \\
+
+% UNO游戏
+% \textbf{Uno Game} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/engr151-23fa/ZuoTianyou523370910102-p2}{Game Link} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Independently implemented the complete game logic in C with structured program design.}  \\
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programming Languages &  \normalsize{C, C++, CUDA, OCaml, SQL, Java, Scala, Shell, Python} \\
+Language Skills  &  \normalsize{Mandarin, English} \\
+Tech Skills & \normalsize{Git, SSH, CUDA Kernel Development, Linux, Docker, Hadoop, Spark} \\
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
