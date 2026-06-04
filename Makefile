@@ -11,7 +11,7 @@ en: cv.tex
 	$(MAKE) clean-tmp
 
 clean-tmp:
-	rm -f *.aux *.log *.out *.toc *.synctex.gz *.bbl *.blg *.fdb_latexmk *.fls
+	rm -f *.aux *.log *.out *.toc *.synctex.gz *.bbl *.blg *.fdb_latexmk *.fls *.bcf *.xml
 
 clean: clean-tmp
 	rm -f cv-chinese.pdf cv.pdf
