@@ -3,11 +3,11 @@
 all: cn en
 
 cn: cv-chinese.tex
-	xelatex -interaction=nonstopmode cv-chinese.tex
+	xelatex -interaction=nonstopmode -shell-escape cv-chinese.tex
 	$(MAKE) clean-tmp
 
 en: cv.tex
-	xelatex -interaction=nonstopmode cv.tex
+	xelatex -interaction=nonstopmode -shell-escape cv.tex
 	$(MAKE) clean-tmp
 
 clean-tmp:

@@ -184,6 +184,17 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
+%	Prizes & Honors
+%----------------------------------------------------------------------------------------
+
+\section{Prizes \& Honors}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{First Prize}, & NOIP 2020 \\
+\textbf{Silver}, & UPC 2024
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
 %   Projects
 %----------------------------------------------------------------------------------------
 
@@ -194,14 +205,14 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 \textbf{muBLAS} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's version of cuBLAS. I implemented several apis like \mintinline{cpp}{getrfBatched}, \mintinline{cpp}{getrsBatched}, \mintinline{cpp}{getriBatched}, \mintinline{cpp}{matinvBatched}.}  \\
 
-\textbf{LemonDB - Multi-Threaded In-Memory Database} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{Repo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Implemented a thread pool and task scheduling mechanism to support concurrent query execution. Designed synchronization strategies to ensure thread safety and reduce contention.}  \\
+\textbf{LemonDB: Multi-threaded In-Memory Relational Database} & \hfill \href{https://github.com/your-repo}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a high-concurrency database from scratch using \textbf{C++20}. Engineered a high-performance pull-based thread pool where worker threads fetch tasks in batches, reducing global lock contention by 16x, and utilized local queues to minimize synchronization overhead. Enforced thread safety via table-level \textbf{std::shared\_mutex} with RAII guards. Built an adaptive scheduler that seamless fallbacks to single-thread mode under light workloads to eliminate thread pool overhead, and implemented a dependency-aware topology using \textbf{std::variant} and a global priority heap for automatic transaction routing.} \\
 
 \textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{Repo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{Built a Unix-like shell in C supporting redirection, pipes, background jobs, and signal handling. Implemented process control using fork, exec, and waitpid.}  \\
 
 \textbf{MSD Distributed Recommendation System} & \hfill \href{https://github.com/zty2004/ECE4721J}{Repo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Implemented machine learning models including Linear Regression and XGBoost for prediction tasks. Applied PCA for dimensionality reduction and deployed distributed computation using Spark.}  \\
+\multicolumn{2}{@{}X@{}}{Built an end-to-end big data pipeline on Million Song Dataset; compressed 288GB HDF5 data into 884MB Avro (99.7\% efficiency gain) and optimized PySpark processing time from 5.5 to 1.3 hours. Implemented sub-second similarity recommendations using FAISS (HNSW/LSH) and achieved 80\% accuracy within a $\pm$10-year error margin using Spark MLlib and XGBoost.} \\
 
 % 工导游戏
 % \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{Game Link} \\[3.75pt]
