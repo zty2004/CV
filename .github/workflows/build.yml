@@ -1,0 +1,69 @@
+name: Build LaTeX CV
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'cv.tex'
+      - 'cv-cn.tex'
+      - 'citations.bib'
+      - 'Makefile'
+      - '.github/workflows/build.yml'
+  pull_request:
+    branches: [master]
+    paths:
+      - 'cv.tex'
+      - 'cv-cn.tex'
+      - 'citations.bib'
+      - 'Makefile'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-xetex \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-extra \
+            texlive-bibtex-extra \
+            texlive-lang-chinese \
+            biber \
+            python3-pygments
+
+      - name: Build English CV
+        run: |
+          xelatex -interaction=nonstopmode -shell-escape cv.tex
+          biber cv
+          xelatex -interaction=nonstopmode -shell-escape cv.tex
+          xelatex -interaction=nonstopmode -shell-escape cv.tex
+
+      - name: Build Chinese CV
+        run: |
+          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
+          biber cv-cn
+          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
+          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
+
+      - name: Upload English CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-en
+          path: cv.pdf
+          if-no-files-found: error
+
+      - name: Upload Chinese CV PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-cn
+          path: cv-cn.pdf
+          if-no-files-found: error
