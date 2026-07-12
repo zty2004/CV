@@ -27,6 +27,8 @@
 
 \documentclass[a4paper,12pt]{article}
 
+\usepackage{ctex} 
+
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
@@ -85,9 +87,6 @@
 %for social icons
 \usepackage{fontawesome5}
 
-%for code
-\usepackage{minted}
-
 %debug page outer frames
 %\usepackage{showframe}
 
@@ -128,7 +127,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Zuo Tianyou} \\[7.5pt]
+\Huge{左天佑} \\[7.5pt]
 \href{mailto:fztym@sjtu.edu.cn}{\raisebox{-0.05\height}\faEnvelope \ fztym@sjtu.edu.cn} \ $|$ \ 
 \href{tel:+8613162909941}{\raisebox{-0.05\height}\faMobile \ +86.131.6290.9941} \\
 \end{tabularx}
@@ -137,90 +136,88 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
-\section{Education}
+\section{教育背景}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-\textbf{Shanghai Jiao Tong University} & Shanghai, China \\
-\textit{B.S. in Electrical and Computer Engineering, Minor in Computer Science} & Sep. 2023 - Present \\  
-\normalsize (GPA: 3.62/4.0) & (Rank: 51/215)\\
+\textbf{上海交通大学} & 中国上海 \\
+\textit{电子计算机工程，计算机科学辅修} & 2023 年 9 月 - 至今 \\  
+\normalsize (GPA: 3.62/4.0) & (排名：51/215)\\
 \end{tabularx}
-
-\section{Work Experience}
-
-\begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{Jan. 2026 - May. 2026}
-Participated in the development of muBLAS, a high-performance GPU math library. 
-Implemented and optimized CUDA kernels for linear algebra routines including LU factorization and batched operations. 
-Analyzed shared memory usage and reduction strategies to improve numerical stability and performance.
-\end{jobshort}
-
-% 工导ta
-% \begin{jobshort}{ENGR1000J Intro. to Engineering(SE) | Teaching Assistant}{May. 2025 - Aug. 2025}
-% Led laboratory sessions covering Git workflows, functional programming, agile development practices, and basic game engine architecture. 
-% Maintained course repositories and provided structured feedback on student code quality and teamwork.
-% \end{jobshort}
-
-\begin{jobshort}{ECE4770J Intro. to Algorithm | Teaching Assistant}{Sep. 2025 - Dec. 2025}
-Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail recursion optimization and continuation-passing style (CPS). 
-Maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
-\end{jobshort}
-
-\begin{jobshort}{ECE2810J Data Structures and Algorithms | Teaching Assistant}{Sep. 2025 - Dec. 2025}
-Delivered recitation sessions covering advanced data structures and complexity analysis. 
-Designed supplementary problem sets inspired by competitive programming and maintained the course OJ system.
-\end{jobshort}
 
 %----------------------------------------------------------------------------------------
 %	Courses
 %----------------------------------------------------------------------------------------
 
-\section{Courses}
+\section{主修课程}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-ECE4770J & Introduction to Algorithms \hfill \normalsize (4.0/4.0)\\
-ECE2810J & Data Structures and Algorithms  \hfill \normalsize (4.0/4.0)\\
-MATH1860J & Honors Mathematics II \hfill \normalsize (4.0/4.0)\\
-ECE4821J & Introduction to Operating Systems \hfill \normalsize (4.0/4.0)\\
-ENGR1510J & Accelerated Introduction to Computers and Programming \hfill \normalsize (4.0/4.0)\\
-ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
-% ECE3480J & Introduction to Quantum Information Science \hfill \normalsize (4.0/4.0) \\
+ENGR1510J & 计算机导论（进阶） \hfill \normalsize (4.0/4.0)\\
+MATH1860J & 荣誉数学 II \hfill \normalsize (4.0/4.0)\\
+ECE2810J & 数据结构与算法 \hfill \normalsize (4.0/4.0)\\
+ECE4770J & 算法导论 \hfill \normalsize (4.0/4.0)\\
+ECE4720J & 大数据方法与工具 \hfill \normalsize (4.0/4.0)\\
+% ECE3480J & 量子信息科学导论 \hfill \normalsize (4.0/4.0) \\
+ECE4821J & 操作系统导论 \hfill \normalsize (4.0/4.0)
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	Prizes & Honors
 %----------------------------------------------------------------------------------------
 
-\section{Prizes \& Honors}
+\section{奖项和荣誉}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{First Prize}, & NOIP 2020 \\
-\textbf{Silver}, & UPC 2024
+\textbf{一等奖}, & NOIP 2020 \\
+\textbf{银奖}, & UPC 2024
 \end{tabularx}
 
 
 %----------------------------------------------------------------------------------------
-%   Projects
+% EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-\section{Projects}
+\section{工作经历}
+
+\begin{jobshort}{摩尔线程 (Moore Threads) | GPU 计算与 AI 软件实习生}{2026 年 1 月 - 2026 年 5 月}
+参与 muBLAS 高性能 GPU 数学库的开发。
+实现并优化用于线性代数例程（包括 LU 分解和批处理操作）的 CUDA 内核。
+分析共享内存使用情况及归约策略，以提升数值稳定性和性能。
+\end{jobshort}
+
+\begin{jobshort}{ECE4770J 算法导论 | 助教}{2025 年 9 月 - 2025 年 12 月}
+开展关于 OCaml 算法设计与实现的实验课，重点讲解尾递归优化和延续传递风格 (CPS)。
+维护并扩展在线判题系统 (OJ)，强化测试用例，并调试评分脚本。
+\end{jobshort}
+
+\begin{jobshort}{ECE2810J 数据结构与算法 | 助教}{2025 年 9 月 - 2025 年 12 月}
+主持习题课，涵盖高级数据结构与复杂度分析。
+设计受信息竞赛启发的补充习题集，并维护课程 OJ 系统。
+\end{jobshort}
+
+% \begin{jobshort}{ENGR1000J 工程导论 (SE) | 助教}{2025 年 5 月 - 2025 年 8 月}
+%主持实验室课程，涵盖 Git 工作流、函数式编程、敏捷开发实践及基础游戏引擎架构。
+% 维护课程仓库，并针对学生代码质量和团队协作提供结构化反馈。
+% \end{jobshort}
+
+%Projects
+\section{项目经历}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 
 \textbf{muBLAS} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's version of cuBLAS. I implemented several apis like \mintinline{cpp}{getrfBatched}, \mintinline{cpp}{getrsBatched}, \mintinline{cpp}{getriBatched}, \mintinline{cpp}{matinvBatched}.}  \\
+\multicolumn{2}{@{}X@{}}{muBLAS 是摩尔线程（Moore Threads）自主研发的 GPU 基础线性代数算子库（对标 NVIDIA cuBLAS）。期间参与了多项核心矩阵运算 API 的设计与开发，包括批处理矩阵 LU 分解 \mintinline{cpp}{getrfBatched}、批处理线性方程组求解 \mintinline{cpp}{getrsBatched}、以及批处理矩阵求逆 \mintinline{cpp}{getriBatched} 和 \mintinline{cpp}{matinvBatched}。}  \\
 
-\textbf{LemonDB: Multi-threaded In-Memory Relational Database} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{Repo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Developed a high-concurrency database from scratch using \textbf{C++20}. Engineered a high-performance pull-based thread pool where worker threads fetch tasks in batches, reducing global lock contention by 16x, and utilized local queues to minimize synchronization overhead. Enforced thread safety via table-level \textbf{std::shared\_mutex} with RAII guards. Built an adaptive scheduler that seamless fallbacks to single-thread mode under light workloads to eliminate thread pool overhead, and implemented a dependency-aware topology using \textbf{std::variant} and a global priority heap for automatic transaction routing.} \\
+\textbf{LemonDB 现代 C++ 多线程内存数据库} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{基于 \textbf{C++20} 开发高并发关系型数据库。核心主导高性能拉取式（Pull-Based）线程池，通过 Worker 线程批量拉取任务（Batch Fetch）将全局锁竞争降低 16 倍，并利用本地队列减少同步开销；并发控制采用表级 \textbf{std::shared\_mutex} 配合 RAII 守卫确保异常安全。设计自适应执行路径，小负载自动降级为单线程以消除线程池开销。构建依赖感知调度系统，利用 \textbf{std::variant} 多级队列与全局优先级堆，实现复杂查询间资源依赖的自动解析与透明拓扑调度。} \\
 
-\textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{Repo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built a Unix-like shell in C supporting redirection, pipes, background jobs, and signal handling. Implemented process control using fork, exec, and waitpid.}  \\
+\textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{使用 C 语言构建了一个类 Unix Shell，支持重定向、管道、后台作业及信号处理。利用 fork, exec 和 waitpid 实现了进程控制。}  \\
 
-\textbf{MSD Distributed Recommendation System} & \hfill \href{https://github.com/zty2004/ECE4721J}{Repo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Built an end-to-end big data pipeline on Million Song Dataset; compressed 288GB HDF5 data into 884MB Avro (99.7\% efficiency gain) and optimized PySpark processing time from 5.5 to 1.3 hours. Implemented sub-second similarity recommendations using FAISS (HNSW/LSH) and achieved 80\% accuracy within a $\pm$10-year error margin using Spark MLlib and XGBoost.} \\
+\textbf{MSD分布式音乐推荐系统} & \hfill \href{https://github.com/zty2004/ECE4721J}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{基于百万歌曲数据集构建端到端大数据管道；将288GB原始数据转为884MB Avro格式（存储效率提升99.7\%），使PySpark处理耗时从5.5小时缩短至1.3小时。基于FAISS(HNSW/LSH)实现亚秒级高性能推荐算法，并利用Spark MLlib与XGBoost训练预测模型，在$\pm$10年误差内达到80\%的准确率。} \\
 
-% 工导游戏
-% \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{Game Link} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Designed and implemented core game logic and state management with modular architecture and maintainable code structure.}  \\
+% \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{游戏链接} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{设计并实现了核心游戏逻辑与状态管理，采用了模块化架构以保持代码的可维护性。}  \\
 
-% UNO游戏
-% \textbf{Uno Game} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/engr151-23fa/ZuoTianyou523370910102-p2}{Game Link} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{Independently implemented the complete game logic in C with structured program design.}  \\
+% \textbf{Uno 游戏} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/engr151-23fa/ZuoTianyou523370910102-p2}{游戏链接} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{独立使用 C 语言实现了完整的游戏逻辑，采用了结构化的程序设计方法。}  \\
 
 \end{tabularx}
 
@@ -228,14 +225,14 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 %	SKILLS
 %----------------------------------------------------------------------------------------
 
-\section{Skills}
+\section{技能专长}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming Languages &  \normalsize{C, C++, CUDA, OCaml, SQL, Java, Scala, Shell, Python} \\
-Language Skills  &  \normalsize{Mandarin, English} \\
-Tech Skills & \normalsize{Git, SSH, CUDA Kernel Development, Linux, Docker, Hadoop, Spark} \\
+编程语言 &  \normalsize{C, C++, CUDA, OCaml, SQL, Java, Scala, Shell, Python} \\
+语言能力 &  \normalsize{普通话，英语} \\
+技术技能 & \normalsize{Git, SSH, CUDA 内核开发，Linux, Docker, Hadoop, Spark} \\
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
+\center{\footnotesize 最后更新：\today}
 
 \end{document}
