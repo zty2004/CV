@@ -44,7 +44,7 @@ jobs:
         run: |
           rm -rf _minted-cv
           mkdir -p _minted-cv
-          pygmentize -S default -f latex -o _minted-cv/default.pygstyle
+          pygmentize -S default -f latex > _minted-cv/default.pygstyle
           xelatex -interaction=nonstopmode -shell-escape cv.tex
           biber cv
           xelatex -interaction=nonstopmode -shell-escape cv.tex
