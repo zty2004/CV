@@ -121,6 +121,9 @@
 
 \begin{document}
 
+% minted v3 highlighting is unreliable inside tabularx; pre-cache all snippets here
+\setbox0=\hbox{\mintinline{cpp}{getrfBatched}\mintinline{cpp}{getrsBatched}\mintinline{cpp}{getriBatched}\mintinline{cpp}{matinvBatched}}
+
 \pagestyle{empty} 
 
 %----------------------------------------------------------------------------------------
