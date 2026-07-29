@@ -144,43 +144,19 @@
 \normalsize (GPA: 3.62/4.0) & (Rank: 51/215)\\
 \end{tabularx}
 
-\section{Work Experience}
-
-\begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{Jan. 2026 - May. 2026}
-Participated in the development of muBLAS, a high-performance GPU math library. 
-Implemented and optimized CUDA kernels for linear algebra routines including LU factorization and batched operations. 
-Analyzed shared memory usage and reduction strategies to improve numerical stability and performance.
-\end{jobshort}
-
-% 工导ta
-% \begin{jobshort}{ENGR1000J Intro. to Engineering(SE) | Teaching Assistant}{May. 2025 - Aug. 2025}
-% Led laboratory sessions covering Git workflows, functional programming, agile development practices, and basic game engine architecture. 
-% Maintained course repositories and provided structured feedback on student code quality and teamwork.
-% \end{jobshort}
-
-\begin{jobshort}{ECE4770J Intro. to Algorithm | Teaching Assistant}{Sep. 2025 - Dec. 2025}
-Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail recursion optimization and continuation-passing style (CPS). 
-Maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
-\end{jobshort}
-
-\begin{jobshort}{ECE2810J Data Structures and Algorithms | Teaching Assistant}{Sep. 2025 - Dec. 2025}
-Delivered recitation sessions covering advanced data structures and complexity analysis. 
-Designed supplementary problem sets inspired by competitive programming and maintained the course OJ system.
-\end{jobshort}
-
 %----------------------------------------------------------------------------------------
 %	Courses
 %----------------------------------------------------------------------------------------
 
 \section{Courses}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-ECE4770J & Introduction to Algorithms \hfill \normalsize (4.0/4.0)\\
-ECE2810J & Data Structures and Algorithms  \hfill \normalsize (4.0/4.0)\\
-MATH1860J & Honors Mathematics II \hfill \normalsize (4.0/4.0)\\
-ECE4821J & Introduction to Operating Systems \hfill \normalsize (4.0/4.0)\\
 ENGR1510J & Accelerated Introduction to Computers and Programming \hfill \normalsize (4.0/4.0)\\
-ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
+MATH1860J & Honors Mathematics II \hfill \normalsize (4.0/4.0)\\
+ECE2810J & Data Structures and Algorithms  \hfill \normalsize (4.0/4.0)\\
+ECE4770J & Introduction to Algorithms \hfill \normalsize (4.0/4.0)\\
+ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)\\
 % ECE3480J & Introduction to Quantum Information Science \hfill \normalsize (4.0/4.0) \\
+ECE4821J & Introduction to Operating Systems \hfill \normalsize (4.0/4.0)
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -195,6 +171,38 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 
 
 %----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\begin{jobshort}{Alibaba | Inference Engine Intern}{Jul. 2026 - Present}
+Worked on operator optimization for LLM inference engines, focusing on the LA(linear attention) modules in \textbf{Qwen3-Next}, including \textbf{Gated DeltaNet (GDN)} and \textbf{fused-recurrent} operators.
+\end{jobshort}
+
+\begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{Jan. 2026 - May. 2026}
+Participated in the development of muBLAS, a high-performance GPU math library. 
+Implemented and optimized CUDA kernels for linear algebra routines including LU factorization and batched operations. 
+Analyzed shared memory usage and reduction strategies to improve numerical stability and performance.
+\end{jobshort}
+
+\begin{jobshort}{ECE4770J Intro. to Algorithm | Teaching Assistant}{Sep. 2025 - Dec. 2025}
+Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail recursion optimization and continuation-passing style (CPS). 
+Maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
+\end{jobshort}
+
+\begin{jobshort}{ECE2810J Data Structures and Algorithms | Teaching Assistant}{Sep. 2025 - Dec. 2025}
+Delivered recitation classes covering advanced data structures and complexity analysis. 
+Designed supplementary problem sets inspired by ACM/ICPC and maintained the course OJ system.
+\end{jobshort}
+
+% 工导ta
+% \begin{jobshort}{ENGR1000J Intro. to Engineering(SE) | Teaching Assistant}{May. 2025 - Aug. 2025}
+% Led laboratory sessions covering Git workflows, functional programming, agile development practices, and basic game engine architecture. 
+% Maintained course repositories and provided structured feedback on student code quality and teamwork.
+% \end{jobshort}
+
+%----------------------------------------------------------------------------------------
 %   Projects
 %----------------------------------------------------------------------------------------
 
@@ -203,7 +211,7 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 
 \textbf{muBLAS} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's version of cuBLAS. I implemented several apis like \mintinline{cpp}{getrfBatched}, \mintinline{cpp}{getrsBatched}, \mintinline{cpp}{getriBatched}, \mintinline{cpp}{matinvBatched}.}  \\
+\multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's in-house GPU basic linear algebra library (counterpart to NVIDIA cuBLAS). Participated in the design and development of several core matrix operation APIs, including batched LU factorization \mintinline{cpp}{getrfBatched}, batched linear system solving \mintinline{cpp}{getrsBatched}, and batched matrix inversion \mintinline{cpp}{getriBatched} and \mintinline{cpp}{matinvBatched}.}  \\
 
 \textbf{LemonDB: Multi-threaded In-Memory Relational Database} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{Repo} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{Developed a high-concurrency database from scratch using \textbf{C++20}. Engineered a high-performance pull-based thread pool where worker threads fetch tasks in batches, reducing global lock contention by 16x, and utilized local queues to minimize synchronization overhead. Enforced thread safety via table-level \textbf{std::shared\_mutex} with RAII guards. Built an adaptive scheduler that seamless fallbacks to single-thread mode under light workloads to eliminate thread pool overhead, and implemented a dependency-aware topology using \textbf{std::variant} and a global priority heap for automatic transaction routing.} \\
@@ -230,9 +238,9 @@ ECE4720J & Methods and Tools for Big Data \hfill \normalsize (4.0/4.0)
 
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming Languages &  \normalsize{C, C++, CUDA, OCaml, SQL, Java, Scala, Shell, Python} \\
+Programming Languages &  \normalsize{C/C++, CUDA, Python, Shell, OCaml} \\
 Language Skills  &  \normalsize{Mandarin, English} \\
-Tech Skills & \normalsize{Git, SSH, CUDA Kernel Development, Linux, Docker, Hadoop, Spark} \\
+Tech Skills & \normalsize{Git, SSH, CUDA Kernel Development, vLLM, Linux, Docker, Spark} \\
 \end{tabularx}
 
 \vfill
