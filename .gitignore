@@ -1,2 +1,4 @@
 *.pdf
+_minted/
 _minted-cv/
+_minted-cv-cn/

@@ -27,37 +27,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install TeX Live and dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            texlive-xetex \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-extra \
-            texlive-bibtex-extra \
-            texlive-lang-chinese \
-            biber \
-            python3-pygments
-
       - name: Build English CV
-        run: |
-          rm -rf _minted-cv
-          mkdir -p _minted-cv
-          pygmentize -S default -f latex > _minted-cv/default.pygstyle
-          xelatex -interaction=nonstopmode -shell-escape cv.tex
-          biber cv
-          xelatex -interaction=nonstopmode -shell-escape cv.tex
-          xelatex -interaction=nonstopmode -shell-escape cv.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv.tex
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+          extra_system_packages: py3-pygments
 
       - name: Build Chinese CV
-        run: |
-          rm -rf _minted-cv-cn
-          mkdir -p _minted-cv-cn
-          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
-          biber cv-cn
-          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
-          xelatex -interaction=nonstopmode -shell-escape cv-cn.tex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: cv-cn.tex
+          latexmk_use_xelatex: true
+          latexmk_shell_escape: true
+          extra_system_packages: py3-pygments
 
       - name: Upload English CV PDF
         uses: actions/upload-artifact@v4
