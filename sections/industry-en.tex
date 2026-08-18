@@ -1,0 +1,62 @@
+%----------------------------------------------------------------------------------------
+%	求职版 · 英文 — 工作经历与项目
+%	叙事定位：工程交付、量化结果、技术栈
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+
+\begin{jobshort}{Alibaba | Inference Engine Intern}{\DateAlibabaEn}
+Worked on operator optimization for LLM inference engines, focusing on the LA(linear attention) modules in \textbf{Qwen3-Next}, including \textbf{Gated DeltaNet (GDN)} and \textbf{fused-recurrent} operators.
+\end{jobshort}
+
+\begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{\DateMooreEn}
+Participated in the development of muBLAS, a high-performance GPU math library. 
+Implemented and optimized CUDA kernels for linear algebra routines including LU factorization and batched operations. 
+Analyzed shared memory usage and reduction strategies to improve numerical stability and performance.
+\end{jobshort}
+
+\begin{jobshort}{CS4770J Intro. to Algorithm | Teaching Assistant}{\DateTAEn}
+Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail recursion optimization and continuation-passing style (CPS). 
+Maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
+\end{jobshort}
+
+\begin{jobshort}{CS2810J Data Structures and Algorithms | Teaching Assistant}{\DateTAEn}
+Delivered recitation classes covering advanced data structures and complexity analysis. 
+Designed supplementary problem sets inspired by ACM/ICPC and maintained the course OJ system.
+\end{jobshort}
+
+% 工导ta
+% \begin{jobshort}{ENGR1000J Intro. to Engineering(SE) | Teaching Assistant}{May. 2025 - Aug. 2025}
+% Led laboratory sessions covering Git workflows, functional programming, agile development practices, and basic game engine architecture. 
+% Maintained course repositories and provided structured feedback on student code quality and teamwork.
+% \end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%   Projects
+%----------------------------------------------------------------------------------------
+
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{muBLAS} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's in-house GPU basic linear algebra library (counterpart to NVIDIA cuBLAS). Participated in the design and development of several core matrix operation APIs, including batched LU factorization \mintinline{cpp}{getrfBatched}, batched linear system solving \mintinline{cpp}{getrsBatched}, and batched matrix inversion \mintinline{cpp}{getriBatched} and \mintinline{cpp}{matinvBatched}.}  \\
+
+\textbf{LemonDB: Multi-threaded In-Memory Relational Database} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Developed a high-concurrency database from scratch using \textbf{C++20}. Engineered a high-performance pull-based thread pool where worker threads fetch tasks in batches, reducing global lock contention by 16x, and utilized local queues to minimize synchronization overhead. Enforced thread safety via table-level \textbf{std::shared\_mutex} with RAII guards. Built an adaptive scheduler that seamless fallbacks to single-thread mode under light workloads to eliminate thread pool overhead, and implemented a dependency-aware topology using \textbf{std::variant} and a global priority heap for automatic transaction routing.} \\
+
+\textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Built a Unix-like shell in C supporting redirection, pipes, background jobs, and signal handling. Implemented process control using fork, exec, and waitpid.}  \\
+
+\textbf{MSD Distributed Recommendation System} & \hfill \href{https://github.com/zty2004/ECE4721J}{Repo} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Built an end-to-end big data pipeline on Million Song Dataset; compressed 288GB HDF5 data into 884MB Avro (99.7\% efficiency gain) and optimized PySpark processing time from 5.5 to 1.3 hours. Implemented sub-second similarity recommendations using FAISS (HNSW/LSH) and achieved 80\% accuracy within a $\pm$10-year error margin using Spark MLlib and XGBoost.} \\
+
+% 工导游戏
+% \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{Game Link} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Designed and implemented core game logic and state management with modular architecture and maintainable code structure.}  \\
+
+% UNO游戏
+% \textbf{Uno Game} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/engr151-23fa/ZuoTianyou523370910102-p2}{Game Link} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{Independently implemented the complete game logic in C with structured program design.}  \\
+
+\end{tabularx}

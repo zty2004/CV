@@ -1,9 +1,9 @@
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	cv-cn.tex — 求职版 · 中文（industry / Chinese）
+%	cv-a-cn.tex — 科研版 · 中文（academic / Chinese，原 cv-phd.tex）
 %	维护指引：
-%	  · 可验证事实（日期 / GPA / 联系方式）  → 改 facts.tex
-%	  · 教育 / 课程 / 奖项 / 技能共享块      → 改 shared/*-cn.tex
-%	  · 工作经历与项目叙述                    → 改 sections/industry-cn.tex
+%	  · 可验证事实（日期 / GPA / 联系方式）        → 改 facts.tex
+%	  · 教育 / 课程 / 奖项 / 技能共享块            → 改 shared/*-cn.tex
+%	  · 研究兴趣 / 论文 / 经历 / 教学叙述          → 改 sections/academic-cn.tex
 %	  · 本文件只决定章节顺序与版本特有设置
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -13,13 +13,7 @@
 
 \input{preamble.tex}
 
-%for code（求职版专用：API 名高亮）
-\usepackage{minted}
-
 \begin{document}
-
-% minted v3 highlighting is unreliable inside tabularx; pre-cache all snippets here
-\setbox0=\hbox{\mintinline{cpp}{getrfBatched}\mintinline{cpp}{getrsBatched}\mintinline{cpp}{getriBatched}\mintinline{cpp}{matinvBatched}}
 
 \pagestyle{empty} 
 
@@ -27,11 +21,11 @@
 
 \input{shared/education-cn.tex}
 
+\input{sections/academic-cn.tex}
+
 \input{shared/courses-cn.tex}
 
 \input{shared/honors-cn.tex}
-
-\input{sections/industry-cn.tex}
 
 \input{shared/skills-cn.tex}
 

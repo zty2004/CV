@@ -1,0 +1,58 @@
+%----------------------------------------------------------------------------------------
+%	科研版 · 英文 — 研究兴趣、学术论文、科研与工程经历、教学经历
+%	叙事定位：研究问题、方法论、文献对比、学术服务
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Research Interests}
+High-performance computing and GPU architecture; design and analysis of algorithms.
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+\begin{tabularx}{\linewidth}{@{}X@{}}
+\textbf{Disproofs of the Four-Coin Hereditary Subcurrency Conjecture and the Prefix Pattern Representative Conjecture.} \normalsize (Submitted to SODA 2027) Studied orderly currency systems of the change-making problem in which the greedy algorithm remains optimal, and constructed counterexamples that disprove two existing conjectures on hereditary subcurrency patterns. \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH & ENGINEERING EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Research \& Engineering Experience}
+
+\begin{joblong}{Alibaba | Inference Engine · Operator Optimization Intern}{\DateAlibabaEn}
+\item Worked on operator optimization for LLM inference engines, targeting the linear attention modules of \textbf{Qwen3-Next}, including the \textbf{Gated DeltaNet (GDN)} and \textbf{fused-recurrent} operators.
+\end{joblong}
+
+\begin{joblong}{Moore Threads | GPU Computing \& AI Software Intern}{\DateMooreEn}
+\item Contributed to core kernels of muBLAS, Moore Threads's in-house high-performance GPU math library (counterpart to NVIDIA cuBLAS); independently responsible for the design and implementation of batched dense linear algebra routines: batched LU factorization \texttt{getrfBatched}, linear system solving \texttt{getrsBatched}, and matrix inversion \texttt{getriBatched} / \texttt{matinvBatched}.
+\item Systematically analyzed how shared-memory layout, memory coalescing, and reduction strategies affect performance and numerical stability; located bottlenecks through profiling and iterated on kernels, developing a complete ``modeling--experiment--validation'' performance-tuning methodology.
+\item Surveyed industrial implementations (cuBLAS, MAGMA) and related literature, comparing pivoting strategies for accuracy--performance trade-offs on small batched matrices.
+\end{joblong}
+
+\begin{joblong}{LemonDB: Modern C++ Multi-threaded In-Memory Database}{\href{https://github.com/zty2004/ECE4821Jp2}{Repo}}
+\item Built a high-concurrency relational database in \textbf{C++20}; designed a pull-based thread pool (batch task fetching reduces global lock contention by \textbf{16x}) and a dependency-aware scheduler that automatically resolves inter-query resource dependencies for topological scheduling.
+\end{joblong}
+
+\begin{joblong}{MSD Distributed Music Recommendation System}{\href{https://github.com/zty2004/ECE4721J}{Repo}}
+\item Built an end-to-end big-data pipeline over the Million Song Dataset (288GB of raw data compressed to 884MB Avro, cutting PySpark processing time from 5.5 to \textbf{1.3 hours}) and implemented sub-second approximate-nearest-neighbor recommendation with FAISS.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING
+%----------------------------------------------------------------------------------------
+
+\section{Teaching}
+
+\begin{jobshort}{CS4770J Introduction to Algorithms | Teaching Assistant}{\DateTAEn}
+Conducted lab sessions on algorithm design and implementation in OCaml, focusing on tail-recursion optimization and continuation-passing style (CPS); maintained and extended the Online Judge system, reinforced test cases, and debugged grading scripts.
+\end{jobshort}
+
+\begin{jobshort}{CS2810J Data Structures and Algorithms | Teaching Assistant}{\DateTAEn}
+Led recitations covering advanced data structures and complexity analysis; designed ACM/ICPC-inspired supplementary problem sets and maintained the course OJ system.
+\end{jobshort}

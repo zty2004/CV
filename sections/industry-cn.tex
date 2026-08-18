@@ -1,0 +1,59 @@
+%----------------------------------------------------------------------------------------
+%	求职版 · 中文 — 工作经历与项目
+%	叙事定位：工程交付、量化结果、技术栈
+%----------------------------------------------------------------------------------------
+
+\section{工作经历}
+
+\begin{jobshort}{阿里巴巴 | 推理引擎实习生}{\DateAlibabaCn}
+参与大模型推理引擎的算子优化，围绕 \textbf{Qwen3-Next} 中的线性注意力模块开展工作，涉及 \textbf{Gated DeltaNet (GDN)} 与 \textbf{fused-recurrent} 算子。
+\end{jobshort}
+
+\begin{jobshort}{摩尔线程 | GPU 计算与 AI 软件实习生}{\DateMooreCn}
+参与 muBLAS 高性能 GPU 数学库的开发。
+实现并优化用于线性代数例程（包括 LU 分解和批处理操作）的 CUDA 内核。
+分析共享内存使用情况及归约策略，以提升数值稳定性和性能。
+\end{jobshort}
+
+\begin{jobshort}{CS4770J 算法导论 | 助教}{\DateTACn}
+开展关于 OCaml 算法设计与实现的实验课，重点讲解尾递归优化和延续传递风格 (CPS)。
+维护并扩展在线判题系统 (OJ)，强化测试用例，并调试评分脚本。
+\end{jobshort}
+
+\begin{jobshort}{CS2810J 数据结构与算法 | 助教}{\DateTACn}
+主持习题课，涵盖高级数据结构与复杂度分析。
+设计受信息竞赛启发的补充习题集，并维护课程 OJ 系统。
+\end{jobshort}
+
+% \begin{jobshort}{ENGR1000J 工程导论 (SE) | 助教}{2025 年 5 月 - 2025 年 8 月}
+%主持实验室课程，涵盖 Git 工作流、函数式编程、敏捷开发实践及基础游戏引擎架构。
+% 维护课程仓库，并针对学生代码质量和团队协作提供结构化反馈。
+% \end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%   Projects
+%----------------------------------------------------------------------------------------
+
+\section{项目经历}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{muBLAS} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{muBLAS 是摩尔线程自主研发的 GPU 基础线性代数算子库（对标 NVIDIA cuBLAS）。期间参与了多项核心矩阵运算 API 的设计与开发，包括批处理矩阵 LU 分解 \mintinline{cpp}{getrfBatched}、批处理线性方程组求解 \mintinline{cpp}{getrsBatched}、以及批处理矩阵求逆 \mintinline{cpp}{getriBatched} 和 \mintinline{cpp}{matinvBatched}。}  \\
+
+\textbf{LemonDB 现代 C++ 多线程内存数据库} & \hfill \href{https://github.com/zty2004/ECE4821Jp2}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{基于 \textbf{C++20} 开发高并发关系型数据库。核心主导高性能拉取式（Pull-Based）线程池，通过 Worker 线程批量拉取任务（Batch Fetch）将全局锁竞争降低 16 倍，并利用本地队列减少同步开销；并发控制采用表级 \textbf{std::shared\_mutex} 配合 RAII 守卫确保异常安全。设计自适应执行路径，小负载自动降级为单线程以消除线程池开销。构建依赖感知调度系统，利用 \textbf{std::variant} 多级队列与全局优先级堆，实现复杂查询间资源依赖的自动解析与透明拓扑调度。} \\
+
+\textbf{Mum Shell} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/ece482/ZuoTianyou523370910102-p1}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{使用 C 语言构建了一个类 Unix Shell，支持重定向、管道、后台作业及信号处理。利用 fork, exec 和 waitpid 实现了进程控制。}  \\
+
+\textbf{MSD分布式音乐推荐系统} & \hfill \href{https://github.com/zty2004/ECE4721J}{项目链接} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{基于百万歌曲数据集构建端到端大数据管道；将288GB原始数据转为884MB Avro格式（存储效率提升99.7\%），使PySpark处理耗时从5.5小时缩短至1.3小时。基于FAISS(HNSW/LSH)实现亚秒级高性能推荐算法，并利用Spark MLlib与XGBoost训练预测模型，在$\pm$10年误差内达到80\%的准确率。} \\
+
+% \textbf{Matrix Deception} & \hfill \href{https://focs.ji.sjtu.edu.cn/silverfocs/demo/2024/p2team16/}{游戏链接} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{设计并实现了核心游戏逻辑与状态管理，采用了模块化架构以保持代码的可维护性。}  \\
+
+% \textbf{Uno 游戏} & \hfill \href{https://focs.ji.sjtu.edu.cn/git/engr151-23fa/ZuoTianyou523370910102-p2}{游戏链接} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{独立使用 C 语言实现了完整的游戏逻辑，采用了结构化的程序设计方法。}  \\
+
+\end{tabularx}

@@ -4,17 +4,17 @@ on:
   push:
     branches: [master]
     paths:
-      - 'cv.tex'
-      - 'cv-cn.tex'
-      - 'citations.bib'
+      - '*.tex'
+      - 'shared/**'
+      - 'sections/**'
       - 'Makefile'
       - '.github/workflows/build.yml'
   pull_request:
     branches: [master]
     paths:
-      - 'cv.tex'
-      - 'cv-cn.tex'
-      - 'citations.bib'
+      - '*.tex'
+      - 'shared/**'
+      - 'sections/**'
       - 'Makefile'
       - '.github/workflows/build.yml'
   workflow_dispatch:
@@ -29,34 +29,44 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build English CV
+      - name: Build all four CVs
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: cv.tex
+          root_file: |
+            cv.tex
+            cv-cn.tex
+            cv-a.tex
+            cv-a-cn.tex
           latexmk_use_xelatex: true
           latexmk_shell_escape: true
           extra_system_packages: py3-pygments
 
-      - name: Build Chinese CV
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: cv-cn.tex
-          latexmk_use_xelatex: true
-          latexmk_shell_escape: true
-          extra_system_packages: py3-pygments
-
-      - name: Upload English CV PDF
+      - name: Upload industry CV (en)
         uses: actions/upload-artifact@v4
         with:
           name: cv-en
           path: cv.pdf
           if-no-files-found: error
 
-      - name: Upload Chinese CV PDF
+      - name: Upload industry CV (cn)
         uses: actions/upload-artifact@v4
         with:
           name: cv-cn
           path: cv-cn.pdf
+          if-no-files-found: error
+
+      - name: Upload academic CV (en)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-a-en
+          path: cv-a.pdf
+          if-no-files-found: error
+
+      - name: Upload academic CV (cn)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-a-cn
+          path: cv-a-cn.pdf
           if-no-files-found: error
 
       - name: Publish PDFs to Release
@@ -68,3 +78,5 @@ jobs:
           files: |
             cv.pdf
             cv-cn.pdf
+            cv-a.pdf
+            cv-a-cn.pdf
