@@ -6,7 +6,7 @@
 \section{Work Experience}
 
 \begin{jobshort}{Alibaba | Inference Engine Intern}{\DateAlibabaEn}
-Worked on operator optimization for LLM inference engines, focusing on the LA(linear attention) modules in \textbf{Qwen3-Next}, including \textbf{Gated DeltaNet (GDN)} and \textbf{fused-recurrent} operators.
+Working on operator optimization for \textbf{PAI-vLLM}, Alibaba's in-house vLLM inference engine: Triton kernels for the \textbf{Qwen3-Next} linear-attention (GDN) decode / MTP-verify paths.
 \end{jobshort}
 
 \begin{jobshort}{Moore Threads | GPU Computing \& AI Software Intern}{\DateMooreEn}
@@ -38,6 +38,9 @@ Designed supplementary problem sets inspired by ACM/ICPC and maintained the cour
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{PAI-vLLM} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Algebraically rewrote the \textbf{Gated DeltaNet (GDN)} decode / MTP-verify recurrence of Qwen3-Next in Triton so that outputs are computed from the pre-update state (one fused scan instead of two serial state scans, rank-1 update as a single FMA); ran an end-to-end bf16 mixed-precision pipeline (state registers halved, 2x SM occupancy) and cut state writebacks to once per sequence --- MTP-verify kernels \textbf{10.9\% faster}. Built correctness tests against fp64 reference implementations and CUPTI kernel benchmarks.}  \\
 
 \textbf{muBLAS} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{muBLAS is Moore Threads's in-house GPU basic linear algebra library (counterpart to NVIDIA cuBLAS). Participated in the design and development of several core matrix operation APIs, including batched LU factorization \mintinline{cpp}{getrfBatched}, batched linear system solving \mintinline{cpp}{getrsBatched}, and batched matrix inversion \mintinline{cpp}{getriBatched} and \mintinline{cpp}{matinvBatched}.}  \\

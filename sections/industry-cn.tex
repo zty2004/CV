@@ -6,7 +6,7 @@
 \section{工作经历}
 
 \begin{jobshort}{阿里巴巴 | 推理引擎实习生}{\DateAlibabaCn}
-参与大模型推理引擎的算子优化，围绕 \textbf{Qwen3-Next} 中的线性注意力模块开展工作，涉及 \textbf{Gated DeltaNet (GDN)} 与 \textbf{fused-recurrent} 算子。
+参与 \textbf{PAI-vLLM}（阿里内部 vLLM 推理引擎）的算子优化：负责 \textbf{Qwen3-Next} 线性注意力（GDN）decode / MTP-verify 路径的 Triton 内核。
 \end{jobshort}
 
 \begin{jobshort}{摩尔线程 | GPU 计算与 AI 软件实习生}{\DateMooreCn}
@@ -37,6 +37,9 @@
 \section{项目经历}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{PAI-vLLM} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{对 \textbf{Qwen3-Next} GDN 的 decode / MTP-verify 递推算子做代数重写，使输出直接由更新前的状态计算（两次串行扫描合并为一次 fused 扫描，rank-1 更新化为单条 FMA）；实现 bf16 混合精度流水线（状态寄存器减半、SM occupancy 翻倍）并将状态写回削减为每序列一次，MTP-verify 内核提速 \textbf{10.9\%}。构建对照 fp64 参考实现的正确性测试与 CUPTI 内核计时。}  \\
 
 \textbf{muBLAS} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{muBLAS 是摩尔线程自主研发的 GPU 基础线性代数算子库（对标 NVIDIA cuBLAS）。期间参与了多项核心矩阵运算 API 的设计与开发，包括批处理矩阵 LU 分解 \mintinline{cpp}{getrfBatched}、批处理线性方程组求解 \mintinline{cpp}{getrsBatched}、以及批处理矩阵求逆 \mintinline{cpp}{getriBatched} 和 \mintinline{cpp}{matinvBatched}。}  \\

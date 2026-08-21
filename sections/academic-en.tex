@@ -26,7 +26,13 @@ High-performance computing and GPU architecture; design and analysis of algorith
 \section{Research \& Engineering Experience}
 
 \begin{joblong}{Alibaba | Inference Engine · Operator Optimization Intern}{\DateAlibabaEn}
-\item Worked on operator optimization for LLM inference engines, targeting the linear attention modules of \textbf{Qwen3-Next}, including the \textbf{Gated DeltaNet (GDN)} and \textbf{fused-recurrent} operators.
+\item Working on operator optimization for \textbf{PAI-vLLM}, Alibaba's in-house vLLM-based LLM inference engine: the Gated DeltaNet (GDN) linear-attention decode / MTP-verify kernels of \textbf{Qwen3-Next}, implemented in Triton.
+\end{joblong}
+
+\begin{joblong}{PAI-vLLM: GDN Kernel Optimization (Alibaba)}{\DateAlibabaEn}
+\item Algebraically rewrote the recurrence so that outputs are computed from the pre-update state ($o_t = d\,(h_{t-1}^\top q_t) + u_t\,(k_t^\top q_t)$): the two state inner products merge into a single fused scan, and the output computation leaves the per-step critical path.
+\item Designed a bf16 mixed-precision pipeline with fp32 only at the inputs and outputs (state registers halved, SM occupancy doubled); analyzed error bounds and showed that decay gating acts as a contraction mapping on accumulated error (~6e-3, non-growing in sequence length).
+\item Built the test and benchmark infrastructure (correctness tests against fp64 reference implementations, CUPTI kernel timing, K≠V and non-power-of-two shapes) and fixed a Triton autotune bug where benchmarking corrupted the in-place kernel state; 28/28 tests pass.
 \end{joblong}
 
 \begin{joblong}{Moore Threads | GPU Computing \& AI Software Intern}{\DateMooreEn}

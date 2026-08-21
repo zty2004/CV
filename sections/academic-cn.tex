@@ -26,13 +26,18 @@
 \section{科研与工程经历}
 
 \begin{joblong}{阿里巴巴 | 推理引擎 · 算子优化实习生}{\DateAlibabaCn}
-\item 参与大模型推理引擎的算子优化，围绕 \textbf{Qwen3-Next} 中的线性注意力模块开展工作，涉及 \textbf{Gated DeltaNet (GDN)} 与 \textbf{fused-recurrent} 算子。
+\item 参与 \textbf{PAI-vLLM}（阿里内部 vLLM 推理引擎）的算子优化，负责 \textbf{Qwen3-Next} 线性注意力（Gated DeltaNet）decode / MTP-verify 递推算子（Triton 实现）的优化与正确性验证。
+\end{joblong}
+
+\begin{joblong}{PAI-vLLM：GDN 内核优化（阿里巴巴）}{\DateAlibabaCn}
+\item 对递推做代数重写（$o_t = d\,(h_{t-1}^\top q_t) + u_t\,(k_t^\top q_t)$），使输出可直接由更新前的状态算出：两个状态内积合并为单次 fused 扫描，脱离每步关键路径。
+\item 设计 bf16 混合精度流水线（仅输入输出保留 fp32，状态寄存器减半、SM occupancy 翻倍）；分析误差界并验证 decay 门控对历史误差构成压缩映射（误差 ~6e-3 且不随序列长度增长）。
+\item 构建测试与性能基准（对照 fp64 参考实现的正确性测试、CUPTI 内核计时、K≠V 与非 2 幂形状覆盖），修复 Triton autotune 基准测试污染内核状态的正确性 bug；28/28 测试通过。
 \end{joblong}
 
 \begin{joblong}{摩尔线程 | GPU 计算与 AI 软件实习生}{\DateMooreCn}
 \item 参与自研高性能 GPU 数学库 muBLAS（对标 NVIDIA cuBLAS）的核心算子研发，独立负责批处理稠密线性代数例程：LU 分解 \texttt{getrfBatched}、线性方程组求解 \texttt{getrsBatched}、矩阵求逆 \texttt{getriBatched} / \texttt{matinvBatched} 的设计与实现。
-\item 系统分析共享内存布局、访存合并与归约策略对性能与数值稳定性的影响，通过 profiling 定位瓶颈并迭代优化内核，形成“建模—实验—验证”的完整性能调优方法论。
-\item 调研 cuBLAS / MAGMA 等业界实现与相关文献，对比不同选主元（pivoting）策略在批处理小矩阵场景下的精度—性能权衡。
+\item 系统分析共享内存布局、访存合并与归约策略对性能与数值稳定性的影响，通过 profiling 定位瓶颈并迭代优化内核；调研 cuBLAS / MAGMA 与相关文献，对比批处理小矩阵下选主元（pivoting）策略的精度—性能权衡。
 \end{joblong}
 
 \begin{joblong}{LemonDB：现代 C++ 多线程内存数据库}{\href{https://github.com/zty2004/ECE4821Jp2}{项目链接}}
@@ -50,9 +55,9 @@
 \section{教学经历}
 
 \begin{jobshort}{CS4770J 算法导论 | 助教}{\DateTACn}
-开展 OCaml 算法设计与实现实验课，重点讲解尾递归优化与延续传递风格 (CPS)；维护并扩展在线判题系统 (OJ)，强化测试用例并调试评分脚本。
+开展 OCaml 算法实验课（尾递归优化、延续传递风格）；维护并扩展课程 OJ 与评分脚本。
 \end{jobshort}
 
 \begin{jobshort}{CS2810J 数据结构与算法 | 助教}{\DateTACn}
-主持习题课，讲授高级数据结构与复杂度分析；设计受信息学竞赛启发的补充习题集，并维护课程 OJ 系统。
+主持习题课，讲授高级数据结构与复杂度分析；设计竞赛风格补充习题集并维护课程 OJ。
 \end{jobshort}
