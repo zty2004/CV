@@ -27,12 +27,9 @@ High-performance computing and GPU architecture; design and analysis of algorith
 
 \begin{joblong}{Alibaba | Inference Engine · Operator Optimization Intern}{\DateAlibabaEn}
 \item Working on operator optimization for \textbf{PAI-vLLM}, Alibaba's in-house vLLM-based LLM inference engine: the Gated DeltaNet (GDN) linear-attention decode / MTP-verify kernels of \textbf{Qwen3-Next}, implemented in Triton.
-\end{joblong}
-
-\begin{joblong}{PAI-vLLM: GDN Kernel Optimization (Alibaba)}{\DateAlibabaEn}
-\item Algebraically rewrote the recurrence so that outputs are computed from the pre-update state ($o_t = d\,(h_{t-1}^\top q_t) + u_t\,(k_t^\top q_t)$): the two state inner products merge into a single fused scan, and the output computation leaves the per-step critical path.
-\item Designed a bf16 mixed-precision pipeline with fp32 only at the inputs and outputs (state registers halved, SM occupancy doubled); analyzed error bounds and showed that decay gating acts as a contraction mapping on accumulated error (~6e-3, non-growing in sequence length).
-\item Built the test and benchmark infrastructure (correctness tests against fp64 reference implementations, CUPTI kernel timing, K≠V and non-power-of-two shapes) and fixed a Triton autotune bug where benchmarking corrupted the in-place kernel state; 28/28 tests pass.
+\item Identified the serial dependency of outputs on state updates as the bottleneck of the fused-recurrent kernel, and rewrote the recurrence algebraically ($o_t = d\,(h_{t-1}^\top q_t) + u_t\,(k_t^\top q_t)$) so that outputs are computed from the pre-update state: the two state scans merge into one, and the output computation leaves the per-step critical path.
+\item Designed a bf16 mixed-precision pipeline with fp32 only at the inputs and outputs, and justified its numerical safety by showing that decay gating is a contraction mapping on accumulated error (~6e-3, non-growing in sequence length); state registers halved, SM occupancy doubled.
+\item Built the evaluation methodology (correctness against fp64 reference implementations, CUPTI kernel timing, K≠V and non-power-of-two shapes), which also uncovered a Triton autotune bug where benchmarking corrupted the in-place kernel state; MTP-verify kernels \textbf{10.9\% faster}, 28/28 tests pass.
 \end{joblong}
 
 \begin{joblong}{Moore Threads | GPU Computing \& AI Software Intern}{\DateMooreEn}
